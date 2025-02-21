@@ -1,4 +1,4 @@
-# Flutter Map Marker Cluster
+# Flutter Map Marker Cluster Plus
 
 [![pub package](https://img.shields.io/pub/v/flutter_map_marker_cluster.svg)](https://pub.dartlang.org/packages/flutter_map_marker_cluster) ![travis](https://api.travis-ci.com/lpongetti/flutter_map_marker_cluster.svg?branch=master)
 

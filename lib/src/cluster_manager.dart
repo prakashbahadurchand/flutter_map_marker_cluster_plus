@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
-import 'package:flutter_map_marker_cluster/src/core/distance_grid.dart';
-import 'package:flutter_map_marker_cluster/src/map_calculator.dart';
-import 'package:flutter_map_marker_cluster/src/node/marker_cluster_node.dart';
-import 'package:flutter_map_marker_cluster/src/node/marker_node.dart';
-import 'package:flutter_map_marker_cluster/src/node/marker_or_cluster_node.dart';
+import 'package:flutter_map_marker_cluster_plus/src/core/distance_grid.dart';
+import 'package:flutter_map_marker_cluster_plus/src/map_calculator.dart';
+import 'package:flutter_map_marker_cluster_plus/src/node/marker_cluster_node.dart';
+import 'package:flutter_map_marker_cluster_plus/src/node/marker_node.dart';
+import 'package:flutter_map_marker_cluster_plus/src/node/marker_or_cluster_node.dart';
 
 class ClusterManager {
   final MapCalculator mapCalculator;
@@ -40,12 +40,10 @@ class ClusterManager {
     required int maxClusterRadius,
   }) {
     final len = maxZoom - minZoom + 1;
-    final gridClusters = List<DistanceGrid<MarkerClusterNode>>.generate(
-        len, (_) => DistanceGrid(maxClusterRadius),
-        growable: false);
-    final gridUnclustered = List<DistanceGrid<MarkerNode>>.generate(
-        len, (_) => DistanceGrid(maxClusterRadius),
-        growable: false);
+    final gridClusters =
+        List<DistanceGrid<MarkerClusterNode>>.generate(len, (_) => DistanceGrid(maxClusterRadius), growable: false);
+    final gridUnclustered =
+        List<DistanceGrid<MarkerNode>>.generate(len, (_) => DistanceGrid(maxClusterRadius), growable: false);
 
     final topClusterLevel = MarkerClusterNode(
       alignment: alignment,
@@ -66,22 +64,18 @@ class ClusterManager {
     );
   }
 
-  void addLayer(MarkerNode marker, int disableClusteringAtZoom, int maxZoom,
-      int minZoom) {
+  void addLayer(MarkerNode marker, int disableClusteringAtZoom, int maxZoom, int minZoom) {
     for (var zoom = maxZoom; zoom >= minZoom; zoom--) {
-      final markerPoint =
-          mapCalculator.project(marker.point, zoom: zoom.toDouble());
+      final markerPoint = mapCalculator.project(marker.point, zoom: zoom.toDouble());
       if (zoom <= disableClusteringAtZoom) {
         // try find a cluster close by
-        final cluster =
-            _gridClusters[zoom - minZoom].getNearObject(markerPoint);
+        final cluster = _gridClusters[zoom - minZoom].getNearObject(markerPoint);
         if (cluster != null) {
           cluster.addChild(marker, marker.point);
           return;
         }
 
-        final closest =
-            _gridUnclustered[zoom - minZoom].getNearObject(markerPoint);
+        final closest = _gridUnclustered[zoom - minZoom].getNearObject(markerPoint);
         if (closest != null) {
           final parent = closest.parent!;
           parent.removeChild(closest);
@@ -139,8 +133,7 @@ class ClusterManager {
     _topClusterLevel.addChild(marker, marker.point);
   }
 
-  void _removeFromNewPosToMyPosGridUnclustered(
-      MarkerNode marker, int zoom, int minZoom) {
+  void _removeFromNewPosToMyPosGridUnclustered(MarkerNode marker, int zoom, int minZoom) {
     for (; zoom >= minZoom; zoom--) {
       if (!_gridUnclustered[zoom - minZoom].removeObject(marker)) {
         break;
@@ -148,14 +141,9 @@ class ClusterManager {
     }
   }
 
-  void recalculateTopClusterLevelProperties() =>
-      _topClusterLevel.recalculate(recursively: true);
+  void recalculateTopClusterLevelProperties() => _topClusterLevel.recalculate(recursively: true);
 
   void recursivelyFromTopClusterLevel(
-          int zoomLevel,
-          int disableClusteringAtZoom,
-          LatLngBounds recursionBounds,
-          Function(MarkerOrClusterNode) fn) =>
-      _topClusterLevel.recursively(
-          zoomLevel, disableClusteringAtZoom, recursionBounds, fn);
+          int zoomLevel, int disableClusteringAtZoom, LatLngBounds recursionBounds, Function(MarkerOrClusterNode) fn) =>
+      _topClusterLevel.recursively(zoomLevel, disableClusteringAtZoom, recursionBounds, fn);
 }

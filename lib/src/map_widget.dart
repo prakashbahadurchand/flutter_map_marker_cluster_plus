@@ -1,9 +1,9 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutter_map_marker_cluster/src/animated_map_widget.dart';
-import 'package:flutter_map_marker_cluster/src/fade.dart';
-import 'package:flutter_map_marker_cluster/src/positioned_map_widget.dart';
-import 'package:flutter_map_marker_cluster/src/rotate.dart';
-import 'package:flutter_map_marker_cluster/src/translate.dart';
+import 'package:flutter_map_marker_cluster_plus/src/animated_map_widget.dart';
+import 'package:flutter_map_marker_cluster_plus/src/fade.dart';
+import 'package:flutter_map_marker_cluster_plus/src/positioned_map_widget.dart';
+import 'package:flutter_map_marker_cluster_plus/src/rotate.dart';
+import 'package:flutter_map_marker_cluster_plus/src/translate.dart';
 
 abstract class MapWidget extends StatelessWidget {
   const MapWidget.withKey({super.key});

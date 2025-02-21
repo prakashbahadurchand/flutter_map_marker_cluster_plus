@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
-import 'package:flutter_map_marker_cluster/flutter_map_marker_cluster.dart';
+import 'package:flutter_map_marker_cluster_plus/flutter_map_marker_cluster_plus.dart';
 import 'package:flutter_map_marker_popup/extension_api.dart';
 
 class PolygonOptions {
@@ -90,13 +90,11 @@ class PopupOptions {
     MarkerTapBehavior? markerTapBehavior,
     this.buildPopupOnHover = false,
     this.timeToShowPopupOnHover = 300,
-  })  : markerTapBehavior =
-            markerTapBehavior ?? MarkerTapBehavior.togglePopupAndHideRest(),
+  })  : markerTapBehavior = markerTapBehavior ?? MarkerTapBehavior.togglePopupAndHideRest(),
         popupController = popupController ?? PopupController();
 }
 
-typedef ClusterWidgetBuilder = Widget Function(
-    BuildContext context, List<Marker> markers);
+typedef ClusterWidgetBuilder = Widget Function(BuildContext context, List<Marker> markers);
 
 class MarkerClusterLayerOptions {
   /// Cluster builder

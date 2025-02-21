@@ -1,11 +1,11 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_map_marker_cluster/src/core/util.dart' as util;
-import 'package:flutter_map_marker_cluster/src/map_calculator.dart';
-import 'package:flutter_map_marker_cluster/src/node/marker_cluster_node.dart';
-import 'package:flutter_map_marker_cluster/src/node/marker_node.dart';
-import 'package:flutter_map_marker_cluster/src/node/marker_or_cluster_node.dart';
+import 'package:flutter_map_marker_cluster_plus/src/core/util.dart' as util;
+import 'package:flutter_map_marker_cluster_plus/src/map_calculator.dart';
+import 'package:flutter_map_marker_cluster_plus/src/node/marker_cluster_node.dart';
+import 'package:flutter_map_marker_cluster_plus/src/node/marker_node.dart';
+import 'package:flutter_map_marker_cluster_plus/src/node/marker_or_cluster_node.dart';
 import 'package:latlong2/latlong.dart';
 
 @immutable
@@ -38,8 +38,7 @@ abstract class Translate {
     LatLng? customPoint,
   }) {
     final pos = mapCalculator.getPixelFromPoint(customPoint ?? marker.point);
-    return util.removeAlignment(
-        pos, marker.width, marker.height, marker.alignment ?? Alignment.center);
+    return util.removeAlignment(pos, marker.width, marker.height, marker.alignment ?? Alignment.center);
   }
 
   static Point<double> _getClusterPixel(
@@ -47,8 +46,7 @@ abstract class Translate {
     MarkerClusterNode clusterNode, {
     LatLng? customPoint,
   }) {
-    final pos = mapCalculator
-        .getPixelFromPoint(customPoint ?? clusterNode.bounds.center);
+    final pos = mapCalculator.getPixelFromPoint(customPoint ?? clusterNode.bounds.center);
 
     final calculatedSize = clusterNode.size();
 
@@ -69,9 +67,7 @@ class StaticTranslate extends Translate {
       : position = Translate._getNodePixel(mapCalculator, node);
 
   @override
-  Animation<Point<double>>? animation(
-          AnimationController animationController) =>
-      null;
+  Animation<Point<double>>? animation(AnimationController animationController) => null;
 }
 
 class AnimatedTranslate extends Translate {

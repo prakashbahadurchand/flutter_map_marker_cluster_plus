@@ -1,10 +1,10 @@
 import 'dart:math';
 
 import 'package:flutter/widgets.dart';
-import 'package:flutter_map_marker_cluster/src/fade.dart';
-import 'package:flutter_map_marker_cluster/src/map_widget.dart';
-import 'package:flutter_map_marker_cluster/src/rotate.dart';
-import 'package:flutter_map_marker_cluster/src/translate.dart';
+import 'package:flutter_map_marker_cluster_plus/src/fade.dart';
+import 'package:flutter_map_marker_cluster_plus/src/map_widget.dart';
+import 'package:flutter_map_marker_cluster_plus/src/rotate.dart';
+import 'package:flutter_map_marker_cluster_plus/src/translate.dart';
 
 class AnimatedMapWidget extends MapWidget {
   final Widget child;

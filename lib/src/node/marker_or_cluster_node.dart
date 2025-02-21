@@ -1,5 +1,5 @@
 import 'package:flutter_map/flutter_map.dart';
-import 'package:flutter_map_marker_cluster/src/node/marker_cluster_node.dart';
+import 'package:flutter_map_marker_cluster_plus/src/node/marker_cluster_node.dart';
 
 /// Just a base class which MarkerNode and MarkerClusterNode both extend which
 /// allows us to restrict arguments to one of those two classes without having

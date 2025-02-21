@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_map_marker_cluster/src/node/marker_node.dart';
+import 'package:flutter_map_marker_cluster_plus/src/node/marker_node.dart';
 
 class MarkerWidget extends StatelessWidget {
   final MarkerNode marker;

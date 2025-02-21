@@ -1,9 +1,8 @@
-name: flutter_map_marker_cluster
-description: A Dart implementation of Leaflet.makercluster for Flutter apps.
-  Provides beautiful animated marker clustering functionality for flutter_map.
-version: 1.4.0
+name: flutter_map_marker_cluster_plus
+description: Updated library based on flutter map v8 from fork of flutter_map_marker_cluster, Provides beautiful animated marker clustering functionality for flutter_map.
+version: 1.4.1
 
-homepage: https://github.com/lpongetti/flutter_map_marker_cluster
+homepage: https://github.com/prakashbahadurchand/flutter_map_marker_cluster_plus
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
@@ -12,9 +11,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_map: ">=7.0.0 <8.0.0"
+  flutter_map: ">=7.0.0 <=8.0.0"
   flutter_map_marker_popup: ^7.0.0
-  latlong2: ^0.9.0
+  latlong2: ^0.9.1
 
 dev_dependencies:
   flutter_lints: ^4.0.0
