@@ -40,10 +40,8 @@ class ClusterManager {
     required int maxClusterRadius,
   }) {
     final len = maxZoom - minZoom + 1;
-    final gridClusters =
-        List<DistanceGrid<MarkerClusterNode>>.generate(len, (_) => DistanceGrid(maxClusterRadius), growable: false);
-    final gridUnclustered =
-        List<DistanceGrid<MarkerNode>>.generate(len, (_) => DistanceGrid(maxClusterRadius), growable: false);
+    final gridClusters = List<DistanceGrid<MarkerClusterNode>>.generate(len, (_) => DistanceGrid(maxClusterRadius), growable: false);
+    final gridUnclustered = List<DistanceGrid<MarkerNode>>.generate(len, (_) => DistanceGrid(maxClusterRadius), growable: false);
 
     final topClusterLevel = MarkerClusterNode(
       alignment: alignment,
@@ -143,7 +141,6 @@ class ClusterManager {
 
   void recalculateTopClusterLevelProperties() => _topClusterLevel.recalculate(recursively: true);
 
-  void recursivelyFromTopClusterLevel(
-          int zoomLevel, int disableClusteringAtZoom, LatLngBounds recursionBounds, Function(MarkerOrClusterNode) fn) =>
+  void recursivelyFromTopClusterLevel(int zoomLevel, int disableClusteringAtZoom, LatLngBounds recursionBounds, Function(MarkerOrClusterNode) fn) =>
       _topClusterLevel.recursively(zoomLevel, disableClusteringAtZoom, recursionBounds, fn);
 }

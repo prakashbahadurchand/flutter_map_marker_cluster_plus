@@ -13,12 +13,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // home: const ClusteringPage(),
-      // routes: <String, WidgetBuilder>{
-      //   ClusteringPage.route: (context) => const ClusteringPage(),
-      //   ClusteringManyMarkersPage.route: (context) =>
-      //       const ClusteringManyMarkersPage(),
-      // },
+      home: const ClusteringPage(),
+      routes: <String, WidgetBuilder>{
+        ClusteringPage.route: (context) => const ClusteringPage(),
+        ClusteringManyMarkersPage.route: (context) => const ClusteringManyMarkersPage(),
+      },
     );
   }
 }

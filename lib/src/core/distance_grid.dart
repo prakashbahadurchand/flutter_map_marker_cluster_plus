@@ -1,5 +1,5 @@
 import 'dart:collection';
-import 'dart:math';
+import 'dart:ui';
 
 class CellEntry<T> {
   final T obj;
@@ -39,15 +39,15 @@ class DistanceGrid<T> {
     _objectPoint.clear();
   }
 
-  void addObject(T obj, Point<double> point) {
-    final key = GridKey(_getCoord(point.y), _getCoord(point.x));
+  void addObject(T obj, Offset point) {
+    final key = GridKey(_getCoord(point.dy), _getCoord(point.dx));
     final cell = _grid[key] ??= [];
 
     _objectPoint[obj] = key;
-    cell.add(CellEntry<T>(point.x, point.y, obj));
+    cell.add(CellEntry<T>(point.dx, point.dy, obj));
   }
 
-  void updateObject(T obj, Point<double> point) {
+  void updateObject(T obj, Offset point) {
     removeObject(obj);
     addObject(obj, point);
   }
@@ -74,9 +74,9 @@ class DistanceGrid<T> {
     }
   }
 
-  T? getNearObject(Point<double> point) {
-    final px = point.x;
-    final py = point.y;
+  T? getNearObject(Offset point) {
+    final px = point.dx;
+    final py = point.dy;
 
     final x = _getCoord(px), y = _getCoord(py);
     double closestDistSq = _sqCellSize;

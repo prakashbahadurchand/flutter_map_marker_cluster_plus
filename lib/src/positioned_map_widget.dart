@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/widgets.dart';
 import 'package:flutter_map_marker_cluster_plus/src/map_widget.dart';
 import 'package:flutter_map_marker_cluster_plus/src/rotate.dart';
@@ -7,7 +5,7 @@ import 'package:flutter_map_marker_cluster_plus/src/rotate.dart';
 class PositionedMapWidget extends MapWidget {
   final Size size;
   final Widget child;
-  final Point<double> position;
+  final Offset position;
   final Rotate? rotate;
 
   const PositionedMapWidget({
@@ -23,8 +21,8 @@ class PositionedMapWidget extends MapWidget {
     return Positioned(
       width: size.width,
       height: size.height,
-      left: position.x,
-      top: position.y,
+      left: position.dx,
+      top: position.dy,
       child: rotate == null
           ? child
           : Transform.rotate(

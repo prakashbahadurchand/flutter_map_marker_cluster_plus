@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_marker_cluster_plus/src/node/marker_node.dart';
@@ -122,7 +120,7 @@ class MarkerClusterNode extends MarkerOrClusterNode {
   }
 
   @override
-  Bounds<double> pixelBounds(MapCamera map) {
+  Offset pixelBounds(MapCamera map) {
     final width = size().width;
     final height = size().height;
 
@@ -131,9 +129,9 @@ class MarkerClusterNode extends MarkerOrClusterNode {
     final right = width - left;
     final bottom = height - top;
 
-    final ne = map.project(bounds.northEast) + Point(right, -top);
-    final sw = map.project(bounds.southWest) + Point(-left, bottom);
+    final ne = map.projectAtZoom(bounds.northEast) + Offset(right, bottom);
+    final sw = map.projectAtZoom(bounds.southWest) + Offset(left, top);
 
-    return Bounds(ne, sw);
+    return Offset(ne.dx - sw.dx, ne.dy - sw.dy);
   }
 }
