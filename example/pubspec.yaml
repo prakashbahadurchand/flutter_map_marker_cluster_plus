@@ -10,14 +10,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_map: ^8.0.0
-  flutter_map_marker_cluster:
+  flutter_map: ^8.1.1
+  flutter_map_marker_cluster_plus:
     path: ../
-  cupertino_icons: ^1.0.6
-  latlong2: ^0.9.0
+  cupertino_icons: ^1.0.8
+  latlong2: ^0.9.1
 
 dev_dependencies:
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
 

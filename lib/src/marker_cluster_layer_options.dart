@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_marker_cluster_plus/flutter_map_marker_cluster_plus.dart';
-import 'package:flutter_map_marker_popup/extension_api.dart';
+import 'package:flutter_map_marker_popup_plus/extension_api.dart';
 
 class PolygonOptions {
   final Color color;

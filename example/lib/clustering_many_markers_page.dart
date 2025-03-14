@@ -2,9 +2,10 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
-import 'package:flutter_map_marker_cluster/flutter_map_marker_cluster.dart';
-import 'package:flutter_map_marker_cluster_example/drawer.dart';
+import 'package:flutter_map_marker_cluster_plus/flutter_map_marker_cluster_plus.dart';
 import 'package:latlong2/latlong.dart';
+
+import 'drawer.dart';
 
 class ClusteringManyMarkersPage extends StatefulWidget {
   static const String route = 'clusteringManyMarkersPage';
@@ -60,7 +61,8 @@ class _ClusteringManyMarkersPageState extends State<ClusteringManyMarkersPage> {
       drawer: buildDrawer(context, ClusteringManyMarkersPage.route),
       body: FlutterMap(
         options: MapOptions(
-          initialCenter: LatLng((maxLatLng.latitude + minLatLng.latitude) / 2, (maxLatLng.longitude + minLatLng.longitude) / 2),
+          initialCenter:
+              LatLng((maxLatLng.latitude + minLatLng.latitude) / 2, (maxLatLng.longitude + minLatLng.longitude) / 2),
           initialZoom: 6,
           maxZoom: 15,
         ),

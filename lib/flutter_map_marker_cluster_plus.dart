@@ -1,6 +1,6 @@
-library flutter_map_marker_cluster_plus;
+library;
 
-export 'package:flutter_map_marker_popup/flutter_map_marker_popup.dart';
+export 'package:flutter_map_marker_popup_plus/flutter_map_marker_popup_plus.dart';
 
 export 'src/marker_cluster_layer.dart';
 export 'src/marker_cluster_layer_options.dart';

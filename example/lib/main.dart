@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'clustering_many_markers_page.dart';
+import 'clustering_page.dart';
+
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
