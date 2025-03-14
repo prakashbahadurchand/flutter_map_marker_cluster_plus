@@ -7,19 +7,19 @@ This is a plugin for [flutter_map](https://github.com/johnpryan/flutter_map) pac
 
 <div style="text-align: center"><table><tr>
   <td style="text-align: center">
-  <a href="https://github.com/lpongetti/flutter_map_marker_cluster/blob/master/example.gif">
-    <img src="https://github.com/lpongetti/flutter_map_marker_cluster/blob/master/example.gif" width="200"/></a>
+  <a href="https://github.com/prakashbahadurchand/flutter_map_marker_cluster_plus/blob/master/example.gif">
+    <img src="https://github.com/prakashbahadurchand/flutter_map_marker_cluster_plus/blob/master/example.gif" width="200"/></a>
 </td>
 </tr></table></div>
 
 ## Usage
 
-Add flutter_map and  flutter_map_marker_cluster to your pubspec:
+Add flutter_map and  flutter_map_marker_cluster_plus to your pubspec:
 
 ```yaml
 dependencies:
   flutter_map: any
-  flutter_map_marker_cluster: any # or the latest version on Pub
+  flutter_map_marker_cluster_plus: any # or the latest version on Pub
 ```
 
 [flutter_map](https://github.com/fleaflet/flutter_map/releases) package removed old layering system with v3.0.0 use `MarkerClusterLayerWidget` as member of `children` parameter list and configure it using `MarkerClusterLayerOptions`.

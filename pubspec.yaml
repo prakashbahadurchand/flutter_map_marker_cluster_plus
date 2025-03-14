@@ -1,6 +1,6 @@
 name: flutter_map_marker_cluster_plus
 description: Updated library based on flutter map v8 from fork of flutter_map_marker_cluster, Provides beautiful animated marker clustering functionality for flutter_map.
-version: 1.4.1
+version: 1.4.2
 
 homepage: https://github.com/prakashbahadurchand/flutter_map_marker_cluster_plus
 
